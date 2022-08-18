@@ -1,0 +1,68 @@
+:root {
+    --linklerin-rengi: #000;
+}
+
+
+@import url(reset.css);
+@import url(font.css);
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url(../Fonts/Roboto-Regular.ttf);
+}
+
+
+.container {
+    padding: 0 8%;
+    min-height: 100vh;
+}
+
+header {
+    height: 7.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}  
+
+.fa-bars {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+
+.nav-links > a {
+    color: var(--linklerin-rengi);
+    text-decoration: none;
+}
+
+.nav-links > a::after{
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom:0;
+    background: black;
+    transform: scaleX(0);
+    transform-origin:bottom right;
+    transition: transform 0.25s ease-out; 
+}
+.nav-links > a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media (max-width:768px) {
+    .fa-bars {
+        display: flex;
+    }
+    
+    
+    .nav-links {
+        display: none;
+    }
+
+}
